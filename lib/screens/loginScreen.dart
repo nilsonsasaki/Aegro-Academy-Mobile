@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15)),
                       ),
                     ),
-                    const SizedBox(
+                    /*const SizedBox(
                       height: 10,
                     ),
                     TextFormField(
@@ -68,7 +68,7 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                         ),
                       ),
-                    ),
+                    ),*/
                   ],
                 ),
               ),
