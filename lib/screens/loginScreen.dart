@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import 'package:seeds_catalog/screens/seed_list_screen.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -84,7 +86,9 @@ class LoginScreen extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.popAndPushNamed(context, SeedsListScreen.routeName);
+                        },
                         child: const Text(
                           'Login',
                           style: TextStyle(fontSize: 18),
