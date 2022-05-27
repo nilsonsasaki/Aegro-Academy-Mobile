@@ -27,20 +27,8 @@ class SignupScreen extends StatelessWidget {
                   children: [
                     TextFormField(
                       keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Name',
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              width: 2,
-                              color: Colors.green,
-                            ),
-                            borderRadius: BorderRadius.circular(15)),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              width: 3,
-                              color: Colors.green,
-                            ),
-                            borderRadius: BorderRadius.circular(15)),
                       ),
                     ),
                     const SizedBox(
@@ -48,21 +36,8 @@ class SignupScreen extends StatelessWidget {
                     ),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Email',
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              width: 2,
-                              color: Colors.green,
-                            ),
-                            borderRadius: BorderRadius.circular(15)),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            width: 3,
-                            color: Colors.green,
-                          ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
                       ),
                     ),
                   ],
