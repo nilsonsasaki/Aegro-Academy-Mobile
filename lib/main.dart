@@ -18,6 +18,21 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                width: 2,
+                color: Colors.green,
+              ),
+              borderRadius: BorderRadius.circular(15)),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              width: 3,
+              color: Colors.green,
+            ),
+            borderRadius: BorderRadius.circular(15),
+          ),
+        ),
       ),
       home: const LoginScreen(),
       routes: {
