@@ -47,9 +47,6 @@ class LoginScreen extends StatelessWidget {
                     SizedBox(
                       height: 50,
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15))),
                         onPressed: () {
                           Navigator.popAndPushNamed(context, SeedsListScreen.routeName);
                         },

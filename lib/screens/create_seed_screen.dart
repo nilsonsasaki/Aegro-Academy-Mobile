@@ -102,9 +102,6 @@ class _CreateSeedScreenState extends State<CreateSeedScreen> {
               child: FractionallySizedBox(
                 widthFactor: 0.8,
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15))),
                   onPressed: () {
                     Navigator.pop(context);
                   },
