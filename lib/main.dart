@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         LoginScreen.routeName: (context) => const LoginScreen(),
         SeedsListScreen.routeName: (context) => const SeedsListScreen(),
         SignupScreen.routeName: (context) => const SignupScreen(),
-        CreateSeedScreen.routeName: (context)=> const CreateSeedScreen(),
+        CreateSeedScreen.routeName: (context) => const CreateSeedScreen(),
       },
     );
   }
