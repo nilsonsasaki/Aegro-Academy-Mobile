@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:seeds_catalog/screens/seed_list_screen.dart';
+import 'package:seeds_catalog/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -112,8 +113,10 @@ class LoginScreen extends StatelessWidget {
                                 color: Colors.blue,
                               ),
                               recognizer: TapGestureRecognizer()
-                                ..onTap = () => print(
-                                    'Test'), //TODO: Change to navigate to Signup Screen
+                                ..onTap = () {
+                                  Navigator.pushNamed(
+                                      context, SignupScreen.routeName);
+                                },
                             ),
                           ],
                         ),
