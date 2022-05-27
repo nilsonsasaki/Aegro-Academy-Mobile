@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:seeds_catalog/screens/loginScreen.dart';
+
+import 'package:seeds_catalog/screens/login_screen.dart';
 
 class SeedsListScreen extends StatelessWidget {
   const SeedsListScreen({Key? key}) : super(key: key);

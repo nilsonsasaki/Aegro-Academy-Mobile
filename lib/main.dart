@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:seeds_catalog/screens/loginScreen.dart';
+import 'package:seeds_catalog/screens/login_screen.dart';
 import 'package:seeds_catalog/screens/seed_list_screen.dart';
 
 void main() {
