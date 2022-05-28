@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:seeds_catalog/screens/create_seed_screen.dart';
 import 'package:seeds_catalog/screens/login_screen.dart';
 
 class SeedsListScreen extends StatelessWidget {
@@ -141,8 +142,7 @@ class SeedsListScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15))),
                   onPressed: () {
-                    //TODO: add create entry behaviour
-                    print('Create new seed pressed');
+                    Navigator.pushNamed(context, CreateSeedScreen.routeName);
                   },
                   child: const Text('Create new entry'),
                 ),
