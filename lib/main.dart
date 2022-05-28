@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:seeds_catalog/screens/loginScreen.dart';
+import 'package:seeds_catalog/screens/login_screen.dart';
+import 'package:seeds_catalog/screens/seed_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: const LoginScreen(),
-      routes: {LoginScreen.routeName: (context) => const LoginScreen()},
+      routes: {
+        LoginScreen.routeName: (context) => const LoginScreen(),
+        SeedsListScreen.routeName: (context) => const SeedsListScreen()
+      },
     );
   }
 }
