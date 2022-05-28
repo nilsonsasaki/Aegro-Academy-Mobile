@@ -31,47 +31,10 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Email',
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              width: 2,
-                              color: Colors.green,
-                            ),
-                            borderRadius: BorderRadius.circular(15)),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              width: 3,
-                              color: Colors.green,
-                            ),
-                            borderRadius: BorderRadius.circular(15)),
                       ),
                     ),
-                    /*const SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                      enableSuggestions: false,
-                      autocorrect: false,
-                      keyboardType: TextInputType.visiblePassword,
-                      decoration: InputDecoration(
-                        labelText: 'Password',
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              width: 2,
-                              color: Colors.green,
-                            ),
-                            borderRadius: BorderRadius.circular(15)),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            width: 3,
-                            color: Colors.green,
-                          ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                    ),*/
                   ],
                 ),
               ),
@@ -84,9 +47,6 @@ class LoginScreen extends StatelessWidget {
                     SizedBox(
                       height: 50,
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15))),
                         onPressed: () {
                           Navigator.popAndPushNamed(context, SeedsListScreen.routeName);
                         },

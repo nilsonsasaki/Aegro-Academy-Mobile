@@ -34,13 +34,18 @@ class MyApp extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
           ),
         ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15))),
+        ),
       ),
       home: const LoginScreen(),
       routes: {
         LoginScreen.routeName: (context) => const LoginScreen(),
         SeedsListScreen.routeName: (context) => const SeedsListScreen(),
         SignupScreen.routeName: (context) => const SignupScreen(),
-        CreateSeedScreen.routeName: (context)=> const CreateSeedScreen(),
+        CreateSeedScreen.routeName: (context) => const CreateSeedScreen(),
       },
     );
   }

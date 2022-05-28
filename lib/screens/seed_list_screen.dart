@@ -138,9 +138,6 @@ class SeedsListScreen extends StatelessWidget {
               child: FractionallySizedBox(
                 widthFactor: 0.8,
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15))),
                   onPressed: () {
                     Navigator.pushNamed(context, CreateSeedScreen.routeName);
                   },
