@@ -1,19 +1,15 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'package:seeds_catalog/screens/seed_list_screen.dart';
-import 'package:seeds_catalog/screens/signup_screen.dart';
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({Key? key}) : super(key: key);
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
-
-  static const routeName = '/loginScreen';
+  static const routeName = '/signupScreen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login Screen"),
+        title: const Text("Signup Screen"),
       ),
       body: SafeArea(
         child: Padding(
@@ -30,9 +26,9 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     TextFormField(
-                      keyboardType: TextInputType.emailAddress,
+                      keyboardType: TextInputType.text,
                       decoration: InputDecoration(
-                        labelText: 'Email',
+                        labelText: 'Name',
                         enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               width: 2,
@@ -47,16 +43,13 @@ class LoginScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15)),
                       ),
                     ),
-                    /*const SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     TextFormField(
-                      obscureText: true,
-                      enableSuggestions: false,
-                      autocorrect: false,
-                      keyboardType: TextInputType.visiblePassword,
+                      keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        labelText: 'Password',
+                        labelText: 'Email',
                         enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               width: 2,
@@ -71,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                         ),
                       ),
-                    ),*/
+                    ),
                   ],
                 ),
               ),
@@ -88,37 +81,11 @@ class LoginScreen extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15))),
                         onPressed: () {
-                          Navigator.popAndPushNamed(context, SeedsListScreen.routeName);
+                          Navigator.pop(context);
                         },
                         child: const Text(
-                          'Login',
+                          'Signup',
                           style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 5),
-                      child: RichText(
-                        text: TextSpan(
-                          text: 'Don\'t have a account yet? ',
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: 'Click here!',
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue,
-                              ),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  Navigator.pushNamed(
-                                      context, SignupScreen.routeName);
-                                },
-                            ),
-                          ],
                         ),
                       ),
                     ),
