@@ -4,7 +4,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 import 'package:seeds_catalog/data/database/models/database_seed_model.dart';
-import 'package:seeds_catalog/data/database/tables/seeds_table_helper.dart';
+import 'package:seeds_catalog/data/database/helpers/seeds_table_helper.dart';
 
 class SeedsCatalogDatabase {
   SeedsCatalogDatabase._();
