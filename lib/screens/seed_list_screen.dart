@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:seeds_catalog/screens/create_seed_screen.dart';
 import 'package:seeds_catalog/screens/login_screen.dart';
+import 'package:seeds_catalog/screens/seed_detail_screen.dart';
 
 class SeedsListScreen extends StatelessWidget {
   const SeedsListScreen({Key? key}) : super(key: key);
@@ -60,6 +61,7 @@ class SeedsListScreen extends StatelessWidget {
                             prefixIcon: const Icon(Icons.search),
                             contentPadding: const EdgeInsets.only(left: 10),
                             hintText: 'Seed name',
+                            //TODO: Remove redundant code
                             enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
                                   width: 2,
@@ -115,7 +117,9 @@ class SeedsListScreen extends StatelessWidget {
                               },
                               color: Colors.red.shade700,
                             ),
-                            // tileColor: Colors.green,
+                            onTap: (){
+                              Navigator.pushNamed(context, SeedDetailScreen.routeName);
+                            },
                           ),
                         ),
                         const SizedBox(

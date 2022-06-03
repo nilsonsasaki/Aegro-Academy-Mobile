@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:seeds_catalog/screens/login_screen.dart';
+import 'package:seeds_catalog/screens/seed_detail_screen.dart';
 import 'package:seeds_catalog/screens/seed_list_screen.dart';
 import 'package:seeds_catalog/screens/signup_screen.dart';
 import 'package:seeds_catalog/screens/create_seed_screen.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
         SeedsListScreen.routeName: (context) => const SeedsListScreen(),
         SignupScreen.routeName: (context) => const SignupScreen(),
         CreateSeedScreen.routeName: (context) => const CreateSeedScreen(),
+        SeedDetailScreen.routeName: (context) => SeedDetailScreen()
       },
     );
   }
