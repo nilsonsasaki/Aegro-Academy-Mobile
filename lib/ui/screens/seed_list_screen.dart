@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:seeds_catalog/screens/create_seed_screen.dart';
-import 'package:seeds_catalog/screens/login_screen.dart';
-import 'package:seeds_catalog/screens/seed_detail_screen.dart';
+import 'package:seeds_catalog/ui/screens/create_seed_screen.dart';
+import 'package:seeds_catalog/ui/screens/login_screen.dart';
+import 'package:seeds_catalog/ui/screens/seed_detail_screen.dart';
 
 class SeedsListScreen extends StatelessWidget {
   const SeedsListScreen({Key? key}) : super(key: key);
@@ -55,25 +55,12 @@ class SeedsListScreen extends StatelessWidget {
                             vertical: 2.0, horizontal: 4),
                         child: TextFormField(
                           keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
-                            prefixIcon: const Icon(Icons.search),
-                            contentPadding: const EdgeInsets.only(left: 10),
+                            prefixIcon: Icon(Icons.search),
+                            contentPadding: EdgeInsets.only(left: 10),
                             hintText: 'Seed name',
-                            //TODO: Remove redundant code
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  width: 2,
-                                  color: Colors.green,
-                                ),
-                                borderRadius: BorderRadius.circular(15)),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  width: 3,
-                                  color: Colors.green,
-                                ),
-                                borderRadius: BorderRadius.circular(15)),
                           ),
                         ),
                       ),

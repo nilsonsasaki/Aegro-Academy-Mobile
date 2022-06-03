@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'package:seeds_catalog/screens/seed_list_screen.dart';
-import 'package:seeds_catalog/screens/signup_screen.dart';
+import 'package:seeds_catalog/ui/screens/seed_list_screen.dart';
+import 'package:seeds_catalog/ui/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
