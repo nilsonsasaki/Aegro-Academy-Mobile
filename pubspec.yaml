@@ -38,6 +38,7 @@ dependencies:
   uuid: ^3.0.6
   sqflite: ^2.0.2+1
   path: ^1.8.1
+  flutter_bloc: ^8.0.1
 
 dev_dependencies:
   flutter_test:
