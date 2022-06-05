@@ -7,7 +7,7 @@ import 'package:seeds_catalog/service/http/http_seed_service.dart';
 import 'package:seeds_catalog/service/http/http_user_service.dart';
 import 'package:seeds_catalog/service/http/models/http_seed_model.dart';
 import 'package:seeds_catalog/ui/models/domain_seed_model.dart';
-import 'package:seeds_catalog/ui/models/exceptions/domain_user_model.dart';
+import 'package:seeds_catalog/ui/models/domain_user_model.dart';
 
 class RepositoryImpl
     with DomainUserConverter, HttpSeedsConverter, DomainSeedConverter
