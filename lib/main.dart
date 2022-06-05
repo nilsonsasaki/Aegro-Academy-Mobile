@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:seeds_catalog/screens/login_screen.dart';
-import 'package:seeds_catalog/screens/seed_detail_screen.dart';
-import 'package:seeds_catalog/screens/seed_list_screen.dart';
-import 'package:seeds_catalog/screens/signup_screen.dart';
-import 'package:seeds_catalog/screens/create_seed_screen.dart';
+import 'package:seeds_catalog/ui/screens/login_screen.dart';
+import 'package:seeds_catalog/ui/screens/seed_detail_screen.dart';
+import 'package:seeds_catalog/ui/screens/seed_list_screen.dart';
+import 'package:seeds_catalog/ui/screens/signup_screen.dart';
+import 'package:seeds_catalog/ui/screens/create_seed_screen.dart';
 
 void main() {
   runApp(const MyApp());
