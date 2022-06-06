@@ -1,13 +1,24 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:seeds_catalog/repository/user_repository_impl.dart';
 
 import 'package:seeds_catalog/ui/screens/seed_list_screen.dart';
 import 'package:seeds_catalog/ui/screens/signup_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   static const routeName = '/loginScreen';
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+
+  final repository = UserRepositoryImpl();
+
+  final _textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +41,13 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     TextFormField(
+                      controller: _textController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
                         labelText: 'Email',
@@ -47,8 +65,17 @@ class LoginScreen extends StatelessWidget {
                     SizedBox(
                       height: 50,
                       child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.popAndPushNamed(context, SeedsListScreen.routeName);
+                        onPressed: () async {
+                          if(_textController.text.isNotEmpty ) {
+                            await repository
+                                .authenticateUser(_textController.text)
+                                .then((response) {
+                              if (response) {
+                                Navigator.popAndPushNamed(
+                                    context, SeedsListScreen.routeName);
+                              }
+                            });
+                          }
                         },
                         child: const Text(
                           'Login',

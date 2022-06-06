@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:seeds_catalog/ui/screens/login_screen.dart';
 import 'package:seeds_catalog/ui/screens/seed_detail_screen.dart';
@@ -7,6 +8,9 @@ import 'package:seeds_catalog/ui/screens/signup_screen.dart';
 import 'package:seeds_catalog/ui/screens/create_seed_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
 }
 
@@ -45,7 +49,7 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginScreen.routeName: (context) => const LoginScreen(),
         SeedsListScreen.routeName: (context) => const SeedsListScreen(),
-        SignupScreen.routeName: (context) => const SignupScreen(),
+        SignupScreen.routeName: (context) => SignupScreen(),
         CreateSeedScreen.routeName: (context) => const CreateSeedScreen(),
         SeedDetailScreen.routeName: (context) => SeedDetailScreen()
       },
