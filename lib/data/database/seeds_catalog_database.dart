@@ -49,7 +49,7 @@ class SeedsCatalogDatabase {
   Future<DatabaseSeedModel?> getSeedById(String id) async {
     final db = await database;
     final seedsList = await db.query(seedsTable,
-        where: '${SeedsTableHelper.id} = ?',
+        where: "${SeedsTableHelper.id} = ?",
         whereArgs: [id]) as Map<String, dynamic>;
     if (seedsList.isEmpty || seedsList.length > 1) {
       throw Exception('there was an error');
@@ -57,13 +57,29 @@ class SeedsCatalogDatabase {
     return DatabaseSeedModel.fromMap(seedsList);
   }
 
-  Future<List<DatabaseSeedModel>> getSeedsByColumn(String column) async {
+  Future<List<DatabaseSeedModel>> getSeeds() async {
+    final db = await database;
+    final List<DatabaseSeedModel> seedsList = [];
+
+    final mapList = await db
+        .rawQuery(
+            "SELECT * FROM $seedsTable ORDER BY ${SeedsTableHelper.name} ASC")
+        .catchError((error) => throw error);
+
+    for (var element in mapList) {
+      seedsList.add(DatabaseSeedModel.fromMap(element));
+    }
+
+    return seedsList;
+  }
+
+  Future<List<DatabaseSeedModel>> getSeedsByName(String name) async {
     final db = await database;
     final List<DatabaseSeedModel> seedsList = [];
 
     final mapList = await db.query(seedsTable,
-        where: '$column = ?',
-        whereArgs: [column]).catchError((error) => throw error);
+        where: "$name = LIKE ?",
+        whereArgs: ['%$name%']).catchError((error) => throw error);
 
     for (var element in mapList) {
       seedsList.add(DatabaseSeedModel.fromMap(element));
@@ -84,7 +100,7 @@ class SeedsCatalogDatabase {
   Future<void> deleteSeed(String id) async {
     final db = await database;
     db.delete(seedsTable,
-        where: '${SeedsTableHelper.id} = ?',
+        where: "${SeedsTableHelper.id} = ?",
         whereArgs: [id]).catchError((error) => throw error);
   }
 

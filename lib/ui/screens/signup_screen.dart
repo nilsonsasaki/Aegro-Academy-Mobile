@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:seeds_catalog/repository/user_repository_impl.dart';
 
 class SignupScreen extends StatelessWidget {
-  const SignupScreen({Key? key}) : super(key: key);
+  SignupScreen({Key? key}) : super(key: key);
 
   static const routeName = '/signupScreen';
+
+  final repository = UserRepositoryImpl();
+  final _fullNameController = TextEditingController();
+  final _emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +31,7 @@ class SignupScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     TextFormField(
+                      controller:_fullNameController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
                         labelText: 'Name',
@@ -35,6 +41,7 @@ class SignupScreen extends StatelessWidget {
                       height: 10,
                     ),
                     TextFormField(
+                      controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
                         labelText: 'Email',
@@ -52,8 +59,9 @@ class SignupScreen extends StatelessWidget {
                     SizedBox(
                       height: 50,
                       child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pop(context);
+                        onPressed: () async {
+                          await repository.createUser(_fullNameController.text, _emailController.text).then((value) => Navigator.pop(context));
+
                         },
                         child: const Text(
                           'Signup',
